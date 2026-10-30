@@ -5,7 +5,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
     private static bool restartImmediately = false;
 
     [Header("Game UI")]
@@ -18,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Key Counter UI")]
     public TMP_Text keyCounterText;
+
     [Header("Key Pickup Sound")]
     public AudioClip keyPickupSound;
     public AudioSource keyPickupAudioSource;
@@ -54,51 +54,51 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Hide Game Over when a new game begins.
         if (gameOverPanel != null)
             gameOverPanel.SetActive(false);
 
         Time.timeScale = 1f;
 
-        // Hide the victory screen when a new game begins.
         if (victoryPanel != null)
             victoryPanel.SetActive(false);
 
         UpdateKeyCounter();
 
         if (restartImmediately)
-{
-    restartImmediately = false;
-    gameStarted = true;
+        {
+            restartImmediately = false;
+            gameStarted = true;
 
-    if (startPanel != null)
-        startPanel.SetActive(false);
+            if (startPanel != null)
+                startPanel.SetActive(false);
 
-    Time.timeScale = 1f;
-}
-else
-{
-    gameStarted = false;
+            Time.timeScale = 1f;
 
-    if (startPanel != null)
-        startPanel.SetActive(true);
+            // Make sure both monsters have their sounds enabled.
+            SetMonsterSoundsEnabled(true);
+        }
+        else
+        {
+            gameStarted = false;
 
-    Time.timeScale = 0f;
-}
+            if (startPanel != null)
+                startPanel.SetActive(true);
 
-if (findExitText != null)
-{
-    findExitText.SetActive(false);
-}
+            Time.timeScale = 0f;
+
+            // Silence both monsters while the Start Menu is open.
+            SetMonsterSoundsEnabled(false);
+        }
+
+        if (findExitText != null)
+            findExitText.SetActive(false);
     }
 
     public void CollectKey()
     {
-        // Don't collect anything after the game ends.
         if (gameEnded)
             return;
 
-        // Prevent collecting more than the required number.
         if (collectedKeys >= totalKeys)
             return;
 
@@ -127,9 +127,7 @@ if (findExitText != null)
 
         if (HasAllKeys)
         {
-            Debug.Log(
-                "All keys collected! Find the exit!"
-            );
+            Debug.Log("All keys collected! Find the exit!");
         }
     }
 
@@ -144,42 +142,98 @@ if (findExitText != null)
             "Game Over! The monster caught the player."
         );
 
-        // NEW: Play monster attack sound.
-        if (monsterSounds != null)
-            monsterSounds.PlayAttackSound();
-
         // Stop player movement.
         if (playerMovement != null)
             playerMovement.enabled = false;
 
-        // Stop the player's walking sound immediately.
+        // Stop footsteps.
         if (playerMovement != null)
         {
             PlayerFootsteps footsteps =
-            playerMovement.GetComponent<PlayerFootsteps>();
+                playerMovement.GetComponent<PlayerFootsteps>();
 
-        if (footsteps != null)
-            footsteps.enabled = false;
+            if (footsteps != null)
+                footsteps.enabled = false;
         }
 
-        // Stop monster movement.
-        if (monsterAI != null)
-            monsterAI.enabled = false;
+        // Stop both monsters and their background sounds.
+        // Keep one final attack roar.
+        StopAllMonsters(true);
 
-        // Show Game Over screen.
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
 
-        // Pause gameplay.
         Time.timeScale = 0f;
     }
 
+    // Enable or disable background growling for both monsters.
+    private void SetMonsterSoundsEnabled(bool enabled)
+    {
+        MonsterSounds[] allMonsterSounds =
+            FindObjectsByType<MonsterSounds>(
+                FindObjectsSortMode.None
+            );
+
+        foreach (MonsterSounds sounds in allMonsterSounds)
+        {
+            AudioSource source = sounds.GetComponent<AudioSource>();
+
+            if (!enabled && source != null)
+            {
+                // Stop any growling already playing.
+                source.Stop();
+            }
+
+            // Disabled scripts cannot restart the growling.
+            sounds.enabled = enabled;
+        }
+    }
+
+    // Stop all monsters when the game ends.
+    private void StopAllMonsters(bool playAttackSound)
+    {
+        MonsterAI[] monsters =
+            FindObjectsByType<MonsterAI>(
+                FindObjectsSortMode.None
+            );
+
+        foreach (MonsterAI monster in monsters)
+        {
+            monster.enabled = false;
+        }
+
+        MonsterSounds[] allMonsterSounds =
+            FindObjectsByType<MonsterSounds>(
+                FindObjectsSortMode.None
+            );
+
+        foreach (MonsterSounds sounds in allMonsterSounds)
+        {
+            AudioSource source = sounds.GetComponent<AudioSource>();
+
+            if (source != null)
+                source.Stop();
+
+            sounds.enabled = false;
+        }
+
+        // Keep the final Game Over attack sound.
+        if (playAttackSound && monsterSounds != null)
+        {
+            monsterSounds.PlayAttackSound();
+        }
+    }
+
     public void RestartGame()
-{
-    restartImmediately = true;
-    Time.timeScale = 1f;
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-}
+    {
+        restartImmediately = true;
+
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(
+            SceneManager.GetActiveScene().buildIndex
+        );
+    }
 
     public void QuitGame()
     {
@@ -189,7 +243,6 @@ if (findExitText != null)
 
     private void UpdateKeyCounter()
     {
-        // Update the visible key collection progress.
         if (keyCounterText != null)
         {
             keyCounterText.text =
@@ -199,11 +252,9 @@ if (findExitText != null)
 
     public void WinGame()
     {
-        // Prevent winning more than once.
         if (gameEnded)
             return;
 
-        // Require all keys before allowing victory.
         if (!HasAllKeys)
             return;
 
@@ -217,54 +268,63 @@ if (findExitText != null)
 
         Debug.Log("You escaped the hospital! You win!");
 
-        // Stop player and monster movement.
+        // Stop player movement.
         if (playerMovement != null)
             playerMovement.enabled = false;
 
-        // Stop the player's walking sound immediately.
+        // Stop footsteps.
         if (playerMovement != null)
         {
             PlayerFootsteps footsteps =
-            playerMovement.GetComponent<PlayerFootsteps>();
+                playerMovement.GetComponent<PlayerFootsteps>();
 
-        if (footsteps != null)
-            footsteps.enabled = false;
+            if (footsteps != null)
+                footsteps.enabled = false;
         }
 
-        if (monsterAI != null)
-            monsterAI.enabled = false;
+        // Silence both monsters.
+        StopAllMonsters(false);
 
-       // Pause gameplay immediately.
-Time.timeScale = 0f;
+        Time.timeScale = 0f;
 
-// Show the victory panel after a short delay.
-StartCoroutine(ShowVictoryPanelAfterDelay());
+        // Show Victory Panel after the existing delay.
+        StartCoroutine(ShowVictoryPanelAfterDelay());
     }
 
     private System.Collections.IEnumerator ShowVictoryPanelAfterDelay()
-{
-    yield return new WaitForSecondsRealtime(victoryPanelDelay);
+    {
+        yield return new WaitForSecondsRealtime(
+            victoryPanelDelay
+        );
 
-    if (victoryPanel != null)
-        victoryPanel.SetActive(true);
-}
+        if (victoryPanel != null)
+            victoryPanel.SetActive(true);
+    }
 
-public void StartGame()
-{
-    if (gameStarted) return;
+    public void StartGame()
+    {
+        if (gameStarted)
+            return;
 
-    gameStarted = true;
+        gameStarted = true;
 
-    if (startPanel != null)
-        startPanel.SetActive(false);
+        if (startPanel != null)
+            startPanel.SetActive(false);
 
-    Time.timeScale = 1f;
-}
+        Time.timeScale = 1f;
 
-public void ReturnToMainMenu()
-{
-    restartImmediately = false;
-    Time.timeScale = 1f;
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-}
+        // Enable both monsters' background growling.
+        SetMonsterSoundsEnabled(true);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        restartImmediately = false;
+
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(
+            SceneManager.GetActiveScene().buildIndex
+        );
+    }
 }
