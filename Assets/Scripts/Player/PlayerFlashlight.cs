@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -13,12 +14,13 @@ public class PlayerFlashlight : MonoBehaviour
     public float rechargeRate = 5f;
 
     [Header("Rotation Settings")]
-    public float rotationSpeed = 360f;
+    [Range(0.05f, 0.5f)]
+    public float rotationSmoothTime = 0.15f;
+
+    private float rotationVelocity;
 
     private float currentEnergy;
     private bool flashlightOn = true;
-
-    private PlayerMovement playerMovement;
 
     // Allows other scripts to check whether the flashlight is on.
     public bool IsFlashlightOn => flashlightOn;
@@ -28,8 +30,6 @@ public class PlayerFlashlight : MonoBehaviour
 
     void Start()
     {
-        playerMovement = GetComponent<PlayerMovement>();
-
         // Start with a fully charged flashlight.
         currentEnergy = maxEnergy;
         flashlight.enabled = flashlightOn;
@@ -81,27 +81,45 @@ public class PlayerFlashlight : MonoBehaviour
 
     void RotateFlashlight()
     {
-        Vector2 direction = playerMovement.MovementDirection;
-
-        // Keep the previous direction when the player stops.
-        if (direction.sqrMagnitude < 0.01f)
+        if (flashlightTransform == null || Camera.main == null)
             return;
 
-        // Calculate the angle corresponding to movement direction.
-        float targetAngle = Mathf.Atan2(direction.y, direction.x)
-                            * Mathf.Rad2Deg - 90f;
+        // Convert mouse position from screen space to world space.
+        Vector3 mousePosition = Input.mousePosition;
 
-        // Get the flashlight's current angle.
-        float currentAngle = flashlightTransform.localEulerAngles.z;
-
-        // Smoothly rotate toward the target angle.
-        float newAngle = Mathf.MoveTowardsAngle(
-            currentAngle,
-            targetAngle,
-            rotationSpeed * Time.deltaTime
+        float cameraDistance = Mathf.Abs(
+            flashlightTransform.position.z -
+            Camera.main.transform.position.z
         );
 
-        // Apply the new rotation without rotating the player.
+        mousePosition.z = cameraDistance;
+
+        Vector3 mouseWorldPosition =
+            Camera.main.ScreenToWorldPoint(mousePosition);
+
+        // Direction from the flashlight toward the mouse.
+        Vector2 direction =
+            (Vector2)(mouseWorldPosition - flashlightTransform.position);
+
+        if (direction.sqrMagnitude < 0.0001f)
+            return;
+
+        // The flashlight beam points upward at zero rotation.
+        float targetAngle =
+            Mathf.Atan2(direction.y, direction.x)
+            * Mathf.Rad2Deg - 90f;
+
+        float currentAngle = flashlightTransform.localEulerAngles.z;
+
+        // Smoothly rotate toward the mouse.
+        float newAngle = Mathf.SmoothDampAngle(
+            currentAngle,
+            targetAngle,
+            ref rotationVelocity,
+            rotationSmoothTime
+        );
+
+        // Rotate only the flashlight, not the Player GameObject.
         flashlightTransform.localRotation =
             Quaternion.Euler(0f, 0f, newAngle);
     }

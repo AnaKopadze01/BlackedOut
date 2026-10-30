@@ -22,12 +22,9 @@ public class ExitSpawner : MonoBehaviour
     [Header("Obstacle Detection")]
     public LayerMask wallLayer;
 
-    private void Start()
-    {
-        SpawnExit();
-    }
+   
 
-    private void SpawnExit()
+    public void SpawnExit()
     {
         if (exitPrefab == null || grid == null ||
             pathfinding == null || mansionBoundary == null ||

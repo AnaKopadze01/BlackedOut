@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -21,8 +22,34 @@ public class PlayerMovement : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        // Prevent diagonal movement from being faster.
-        movement = new Vector2(moveX, moveY).normalized;
+        // Get the direction from the player to the mouse.
+        Vector3 mousePosition = Input.mousePosition;
+
+        float cameraDistance = Mathf.Abs(
+            transform.position.z - Camera.main.transform.position.z
+        );
+
+        mousePosition.z = cameraDistance;
+
+        Vector3 mouseWorldPosition =
+            Camera.main.ScreenToWorldPoint(mousePosition);
+
+        Vector2 forward = (Vector2)(
+            mouseWorldPosition - transform.position
+        );
+
+        // Avoid undefined direction when the mouse is on the player.
+        if (forward.sqrMagnitude < 0.0001f)
+            return;
+
+        forward.Normalize();
+
+        // Right direction is perpendicular to forward.
+        Vector2 right = new Vector2(forward.y, -forward.x);
+
+        // W/S move forward/backward.
+        // A/D strafe left/right.
+        movement = (forward * moveY + right * moveX).normalized;
     }
 
     void FixedUpdate()

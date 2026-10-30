@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 91dde7c8b04ae4aed8ec2ab7b48307f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9025931561521848259
+    second: Grimy Abandoned Hospital Bed_0
+  - first:
+      213: 727096843391420585
+    second: Grimy Abandoned Hospital Bed_1
+  - first:
+      213: -6542392284411031516
+    second: Grimy Abandoned Hospital Bed_2
+  - first:
+      213: 8952423122543647785
+    second: Grimy Abandoned Hospital Bed_3
+  - first:
+      213: -7169811696480004937
+    second: Grimy Abandoned Hospital Bed_4
+  - first:
+      213: -5913718443044841223
+    second: Grimy Abandoned Hospital Bed_5
+  - first:
+      213: -7530091397721146762
+    second: Grimy Abandoned Hospital Bed_6
+  - first:
+      213: -668942311837061076
+    second: Grimy Abandoned Hospital Bed_7
+  - first:
+      213: 187292912713582754
+    second: Grimy Abandoned Hospital Bed_8
+  - first:
+      213: 884079810973233556
+    second: Grimy Abandoned Hospital Bed_9
+  - first:
+      213: -6391590211186906828
+    second: Grimy Abandoned Hospital Bed_10
+  - first:
+      213: -4445643662203390066
+    second: Grimy Abandoned Hospital Bed_11
+  - first:
+      213: -8049327504880845871
+    second: Grimy Abandoned Hospital Bed_12
+  - first:
+      213: 7328280097754060478
+    second: Grimy Abandoned Hospital Bed_13
+  - first:
+      213: -8216352049265369062
+    second: Grimy Abandoned Hospital Bed_14
+  - first:
+      213: 7245127643870176225
+    second: Grimy Abandoned Hospital Bed_15
+  - first:
+      213: 4638355181137538389
+    second: Grimy Abandoned Hospital Bed_16
+  - first:
+      213: 6286665226989286771
+    second: Grimy Abandoned Hospital Bed_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1427
+        width: 98
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30e084f0137db280800000000000000
+      internalID: -9025931561521848259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 894
+        height: 1523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a847ab0aba271a00800000000000000
+      internalID: 727096843391420585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_2
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 1327
+        width: 51
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4209c6261e0c435a0800000000000000
+      internalID: -6542392284411031516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 933
+        width: 141
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92c1532e5656d3c70800000000000000
+      internalID: 8952423122543647785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_4
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 1141
+        width: 113
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b45ed4df36bf7c90800000000000000
+      internalID: -7169811696480004937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_5
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1063
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8d2a488604eeda0800000000000000
+      internalID: -5913718443044841223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_6
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 935
+        width: 75
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a3b9815cdbf7790800000000000000
+      internalID: -7530091397721146762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_7
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 809
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2039b7f28077b6f0800000000000000
+      internalID: -668942311837061076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_8
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 526
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8cd3b69e5699200800000000000000
+      internalID: 187292912713582754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_9
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 559
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 491772e67e1e44c00800000000000000
+      internalID: 884079810973233556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_10
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 553
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 439275821928c47a0800000000000000
+      internalID: -6391590211186906828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_11
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 375
+        width: 79
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87766ca4a6ed42c0800000000000000
+      internalID: -4445643662203390066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_12
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 455
+        width: 65
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbbbce084b0b4090800000000000000
+      internalID: -8049327504880845871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_13
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 335
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb612390ce743b560800000000000000
+      internalID: 7328280097754060478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 326
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a102cf1e757a9fd80800000000000000
+      internalID: -8216352049265369062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_15
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 153
+        width: 85
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3ae3da43ddb8460800000000000000
+      internalID: 7245127643870176225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_16
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 23
+        width: 11
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55dabc1567fbe5040800000000000000
+      internalID: 4638355181137538389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grimy Abandoned Hospital Bed_17
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 15
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3753f7c37b8be3750800000000000000
+      internalID: 6286665226989286771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Grimy Abandoned Hospital Bed_0: -9025931561521848259
+      Grimy Abandoned Hospital Bed_1: 727096843391420585
+      Grimy Abandoned Hospital Bed_10: -6391590211186906828
+      Grimy Abandoned Hospital Bed_11: -4445643662203390066
+      Grimy Abandoned Hospital Bed_12: -8049327504880845871
+      Grimy Abandoned Hospital Bed_13: 7328280097754060478
+      Grimy Abandoned Hospital Bed_14: -8216352049265369062
+      Grimy Abandoned Hospital Bed_15: 7245127643870176225
+      Grimy Abandoned Hospital Bed_16: 4638355181137538389
+      Grimy Abandoned Hospital Bed_17: 6286665226989286771
+      Grimy Abandoned Hospital Bed_2: -6542392284411031516
+      Grimy Abandoned Hospital Bed_3: 8952423122543647785
+      Grimy Abandoned Hospital Bed_4: -7169811696480004937
+      Grimy Abandoned Hospital Bed_5: -5913718443044841223
+      Grimy Abandoned Hospital Bed_6: -7530091397721146762
+      Grimy Abandoned Hospital Bed_7: -668942311837061076
+      Grimy Abandoned Hospital Bed_8: 187292912713582754
+      Grimy Abandoned Hospital Bed_9: 884079810973233556
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
